@@ -103,7 +103,7 @@ Frontend is now running at `http://localhost:5173`.
 ### Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- An Anthropic API key
+- An [Anthropic API key](https://console.anthropic.com/)
 
 ### 1. Clone and configure
 
