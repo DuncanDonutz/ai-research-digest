@@ -5,6 +5,7 @@ import ResultView from './components/ResultView'
 
 export default function App() {
   const [phase, setPhase] = useState('idle') // 'idle' | 'loading' | 'result'
+  const [mode, setMode] = useState('url') // 'url' | 'text' — lifted so it survives phase transitions
   const [statusMsg, setStatusMsg] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const [title, setTitle] = useState(null)
@@ -110,6 +111,8 @@ export default function App() {
       <main className="max-w-3xl mx-auto px-6 py-12">
         {phase === 'idle' && (
           <InputForm
+            mode={mode}
+            onModeChange={setMode}
             onURLSubmit={url => submitDigest('/digest/url', { url })}
             onTextSubmit={text => submitDigest('/digest/text', { text })}
             error={error}

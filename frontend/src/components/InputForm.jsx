@@ -6,8 +6,7 @@ const EXAMPLES = [
   { label: 'Attention Is All You Need',  url: 'https://arxiv.org/abs/1706.03762' },
 ]
 
-export default function InputForm({ onURLSubmit, onTextSubmit, error, onClearError }) {
-  const [mode, setMode] = useState('url')
+export default function InputForm({ mode, onModeChange, onURLSubmit, onTextSubmit, error, onClearError }) {
   const [url, setUrl] = useState('')
   const [text, setText] = useState('')
 
@@ -38,7 +37,7 @@ export default function InputForm({ onURLSubmit, onTextSubmit, error, onClearErr
           <button
             key={id}
             type="button"
-            onClick={() => { setMode(id); onClearError() }}
+            onClick={() => { onModeChange(id); onClearError() }}
             className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
               mode === id
                 ? 'bg-gray-700 text-white'
