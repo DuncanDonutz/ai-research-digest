@@ -105,9 +105,12 @@ Frontend is now running at `http://localhost:5173`.
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - An Anthropic API key
 
-### 1. Configure environment
+### 1. Clone and configure
 
 ```bash
+git clone https://github.com/your-username/ai-research-digest.git
+cd ai-research-digest
+
 cp .env.example .env
 # This creates a new .env file — open .env (not .env.example) and replace the placeholder with your real key
 ```
