@@ -2,7 +2,7 @@ import DigestCard from './DigestCard'
 
 const SECTIONS = ['summary', 'contributions', 'limitations', 'so_what']
 
-export default function ResultView({ digest, title, onReset }) {
+export default function ResultView({ digest, title, paperUrl, onReset }) {
   return (
     <div>
       {title && (
@@ -10,7 +10,19 @@ export default function ResultView({ digest, title, onReset }) {
           <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
             Paper
           </p>
-          <h2 className="text-xl font-semibold text-white leading-snug">{title}</h2>
+          {paperUrl ? (
+            <a
+              href={paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-semibold text-blue-400 hover:text-blue-300 transition-colors inline-flex items-start gap-1.5"
+            >
+              {title}
+              <span className="text-sm mt-1 flex-shrink-0">↗</span>
+            </a>
+          ) : (
+            <h2 className="text-xl font-semibold text-white leading-snug">{title}</h2>
+          )}
         </div>
       )}
 

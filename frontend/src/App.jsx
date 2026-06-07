@@ -8,6 +8,7 @@ export default function App() {
   const [statusMsg, setStatusMsg] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const [title, setTitle] = useState(null)
+  const [paperUrl, setPaperUrl] = useState(null)
   const [digest, setDigest] = useState(null)
   const [error, setError] = useState(null)
 
@@ -16,6 +17,7 @@ export default function App() {
     setStatusMsg('')
     setIsTyping(false)
     setTitle(null)
+    setPaperUrl(body.url ?? null)
     setDigest(null)
     setError(null)
 
@@ -121,6 +123,7 @@ export default function App() {
           <ResultView
             digest={digest}
             title={title}
+            paperUrl={paperUrl}
             onReset={() => { setPhase('idle'); setError(null) }}
           />
         )}
