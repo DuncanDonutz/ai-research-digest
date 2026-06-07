@@ -4,8 +4,10 @@ Transform arXiv papers into structured, readable digests powered by the Claude A
 
 Paste an arXiv URL or a raw abstract and get back four sections, a plain-English summary, key contributions, limitations, and real-world implications, each with a confidence indicator showing how much the abstract actually supported that section.
 
-![Screenshot placeholder](docs/screenshot.png)
-> _Add a screenshot._
+<div align="center">
+  <img width="600" height="667" alt="Screenshot 2026-06-07 183552" src="https://github.com/user-attachments/assets/bfd7dc7a-0032-4d27-ab59-a58af6222760" />
+  <img width="600" height="663" alt="Screenshot 2026-06-07 183632" src="https://github.com/user-attachments/assets/70f2c452-f4af-400f-9e1c-2bd2ee9da8f3" />
+</div>
 
 ---
 
