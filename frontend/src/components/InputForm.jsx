@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-const EXAMPLE_URL = 'https://arxiv.org/abs/2408.06292'
+const EXAMPLES = [
+  { label: 'The AI Scientist',            url: 'https://arxiv.org/abs/2408.06292' },
+  { label: 'Transformer²',               url: 'https://arxiv.org/abs/2501.06252' },
+  { label: 'Attention Is All You Need',  url: 'https://arxiv.org/abs/1706.03762' },
+]
 
 export default function InputForm({ onURLSubmit, onTextSubmit, error, onClearError }) {
   const [mode, setMode] = useState('url')
@@ -56,13 +60,19 @@ export default function InputForm({ onURLSubmit, onTextSubmit, error, onClearErr
               placeholder="https://arxiv.org/abs/2408.06292"
               className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
             />
-            <button
-              type="button"
-              onClick={() => { setUrl(EXAMPLE_URL); onClearError() }}
-              className="text-sm text-blue-400 hover:text-blue-300 transition-colors"
-            >
-              Try an example — "The AI Scientist" →
-            </button>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="text-xs text-gray-500">Try an example:</span>
+              {EXAMPLES.map(ex => (
+                <button
+                  key={ex.url}
+                  type="button"
+                  onClick={() => { setUrl(ex.url); onClearError() }}
+                  className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  {ex.label}
+                </button>
+              ))}
+            </div>
           </>
         ) : (
           <textarea
