@@ -156,8 +156,23 @@ DIGEST_TOOL = {
                     "for AI products or the field."
                 ),
             },
+            "confidence": {
+                "type": "object",
+                "description": (
+                    "Your confidence in each section based solely on what the abstract provides. "
+                    "For each key, write 'High', 'Medium', or 'Low' followed by a dash and one sentence explaining why. "
+                    "Example: 'Low — the abstract does not mention any limitations.'"
+                ),
+                "properties": {
+                    "summary":       {"type": "string"},
+                    "contributions": {"type": "string"},
+                    "limitations":   {"type": "string"},
+                    "so_what":       {"type": "string"},
+                },
+                "required": ["summary", "contributions", "limitations", "so_what"],
+            },
         },
-        "required": ["summary", "contributions", "limitations", "so_what"],
+        "required": ["summary", "contributions", "limitations", "so_what", "confidence"],
     },
 }
 

@@ -16,7 +16,12 @@ export default function ResultView({ digest, title, onReset }) {
 
       <div className="space-y-4">
         {SECTIONS.map(section => (
-          <DigestCard key={section} section={section} content={digest[section]} />
+          <DigestCard
+            key={section}
+            section={section}
+            content={digest[section]}
+            confidence={digest.confidence?.[section]}
+          />
         ))}
       </div>
 

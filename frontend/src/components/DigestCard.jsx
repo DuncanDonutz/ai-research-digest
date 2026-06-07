@@ -31,7 +31,18 @@ const CARDS = {
   },
 }
 
-export default function DigestCard({ section, content }) {
+const CONFIDENCE_DOT = {
+  high:   'bg-emerald-400',
+  medium: 'bg-amber-400',
+  low:    'bg-red-400',
+}
+
+function confidenceDotColor(text) {
+  const first = text?.split(/[\s—–-]/)[0]?.toLowerCase()
+  return CONFIDENCE_DOT[first] ?? 'bg-gray-500'
+}
+
+export default function DigestCard({ section, content, confidence }) {
   const c = CARDS[section]
 
   return (
@@ -47,6 +58,17 @@ export default function DigestCard({ section, content }) {
       <div className="prose prose-sm prose-invert max-w-none prose-p:text-gray-300 prose-li:text-gray-300 prose-ul:my-2 prose-li:my-0.5 prose-p:my-1">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
+      {confidence && (
+        <div className="mt-4 pt-4 border-t border-white/5 flex flex-col gap-1.5">
+          <span className="text-xs font-semibold uppercase tracking-widest text-gray-600">
+            Confidence
+          </span>
+          <div className="flex items-center gap-2">
+            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${confidenceDotColor(confidence)}`} />
+            <p className="text-xs text-gray-500">{confidence}</p>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
