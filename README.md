@@ -57,7 +57,7 @@ Paste an arXiv URL or a raw abstract and get back four sections, a plain-English
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/your-username/ai-research-digest.git
+git clone https://github.com/DuncanDonutz/ai-research-digest.git
 cd ai-research-digest
 
 cp .env.example .env
@@ -110,7 +110,7 @@ Frontend is now running at `http://localhost:5173`.
 ### 1. Clone and configure
 
 ```bash
-git clone https://github.com/your-username/ai-research-digest.git
+git clone https://github.com/DuncanDonutz/ai-research-digest.git
 cd ai-research-digest
 
 cp .env.example .env
