@@ -59,7 +59,7 @@ git clone https://github.com/your-username/ai-research-digest.git
 cd ai-research-digest
 
 cp .env.example .env
-# Open .env and set ANTHROPIC_API_KEY=your_key_here
+# This creates a new .env file — open .env (not .env.example) and replace the placeholder with your real key
 ```
 
 ### 2. Start the backend
@@ -109,7 +109,7 @@ Frontend is now running at `http://localhost:5173`.
 
 ```bash
 cp .env.example .env
-# Open .env and set ANTHROPIC_API_KEY=your_key_here
+# This creates a new .env file — open .env (not .env.example) and replace the placeholder with your real key
 ```
 
 ### 2. Build and run
